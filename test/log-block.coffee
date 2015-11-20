@@ -73,3 +73,17 @@ describe 'log-block', ->
     ,
       []
     ]
+
+  context 'isArray patch', ->
+    context 'detects non-arrays', ->
+      Then -> @subject.isArray('foo').should.eql false
+
+    context 'detects non-array objects', ->
+      Then -> @subject.isArray(foo: 'bar').should.eql false
+
+    context 'detects literal arrays', ->
+      Then -> @subject.isArray(['foo']).should.eql true
+
+    context 'detects constructed arrays', ->
+      Then -> @subject.isArray(Array(2)).should.eql true
+    
