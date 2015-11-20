@@ -38,4 +38,4 @@ Serve `dist/log-block.js` or `dist/log-block.min.js` and then access `log-block`
 
 ## Contributing
 
-Please see [the contribution guidelines](contributing.md).
+Please see [the contribution guidelines](CONTRIBUTING.md).
