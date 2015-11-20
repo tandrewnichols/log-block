@@ -10,12 +10,22 @@ Logging utility to generate nice looking log blocks
 
 ## Summary
 
+A wrapper around console.log to add a blank line before and after and indent the items being logged.
+
+![Demo](demo.gif)
+
 ## Usage
 
-### Node
+```js
+var block = require('log-block');
+block('foo', 'bar'); // Multiple strings are logged on the same line
+block(['foo', 'bar'], ['baz', 'quux']); // Each array will be logged on it's own line
+block(['foo', 'bar'], { baz: 'quux' }); // Objects will be stringified
+```
+
 ### Browser
 
-### Example
+Serve `dist/log-block.js` or `dist/log-block.min.js` and then access `log-block` via `window.logBlock`.
 
 ## Contributing
 
