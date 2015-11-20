@@ -10,14 +10,13 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha'],
+    frameworks: ['browserify', 'mocha'],
 
 
     // list of files / patterns to load in the browser
     files: [
       'node_modules/mocha-given/browser/mocha-given.js',
       'node_modules/should/should.js',
-      'dist/log-block.js',
       'test/helpers/**/*.js',
       'test/**/*.coffee'
     ],
@@ -31,7 +30,11 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      '**/*.coffee': ['coffee']
+      'test/log-block.coffee': ['browserify']
+    },
+
+    browserify: {
+      transform: ['coffeeify']
     },
 
 
