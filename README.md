@@ -23,6 +23,15 @@ block(['foo', 'bar'], ['baz', 'quux']); // Each array will be logged on it's own
 block(['foo', 'bar'], { baz: 'quux' }); // Objects will be stringified
 ```
 
+Also works nicely in combination with [chalk](https://github.com/chalk/chalk). E.g.
+
+```js
+block(
+  [chalk.green('Something good happened')],
+  [chalk.red('Oh no! Something bad happened')]
+);
+```
+
 ### Browser
 
 Serve `dist/log-block.js` or `dist/log-block.min.js` and then access `log-block` via `window.logBlock`.
